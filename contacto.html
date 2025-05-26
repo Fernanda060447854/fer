@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Cliente</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        form { max-width: 400px; margin: 20px auto; padding: 20px; border: 1px solid #ddd; background: #fff; }
+        label { display: block; margin-top: 10px; }
+        input, select, textarea { width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ddd; }
+        button { margin-top: 15px; padding: 10px; background: #d32f2f; color: #fff; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>Información del Cliente</h2>
+    <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" required>
+        
+        <label for="direccion">Dirección:</label>
+        <textarea id="direccion" name="direccion" rows="3" required></textarea>
+        
+        <label for="metodo_pago">Método de Pago:</label>
+        <select id="metodo_pago" name="metodo_pago">
+            <option value="tarjeta">Tarjeta de Crédito/Débito</option>
+            <option value="paypal">PayPal</option>
+            <option value="transferencia">Transferencia Bancaria</option>
+        </select>
+        
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>

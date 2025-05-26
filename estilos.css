@@ -1,0 +1,247 @@
+/* Estilos generales para toda la página */
+body {
+    font-family: Arial, sans-serif; /* Fuente general */
+    text-align: center; /* Centra el texto */
+    margin: 0;
+    padding: 0;
+    background-color: #fff8f6; /* Color de fondo suave */
+    color: #333; /* Color del texto principal */
+}
+
+/* Estilos para el encabezado (Header) */
+header {
+    background-color: #ffcccb; /* Fondo rosado claro */
+    padding: 20px; /* Espaciado interior */
+}
+
+header h1 {
+    margin: 10px 0;
+    color: #d32f2f; /* Color rojo oscuro para el título */
+}
+
+/* Navegación dentro del header */
+nav a {
+    margin: 0 15px; /* Separación entre links */
+    text-decoration: none; /* Quita subrayado */
+    color: #d32f2f; /* Mismo rojo que el título */
+    font-weight: bold; /* Negrita para los links */
+}
+
+nav a:hover {
+    text-decoration: underline; /* Subrayado al pasar el cursor */
+}
+
+/* Contenedor general para el contenido principal */
+.container {
+    padding: 20px; /* Espaciado interior */
+}
+
+/* Sección de productos e insumos */
+.productos, .insumos {
+    display: flex; /* Flexbox para alinear en fila */
+    flex-wrap: wrap; /* Permite que se ajusten en varias líneas si es necesario */
+    justify-content: center; /* Centra los elementos */
+    margin-top: 20px; /* Espacio arriba */
+}
+
+/* Tarjetas individuales de producto e insumo */
+.producto, .insumo {
+    border: 1px solid #ddd; /* Borde gris claro */
+    padding: 15px; /* Espaciado interior */
+    margin: 10px; /* Separación entre tarjetas */
+    width: 200px; /* Ancho fijo */
+    border-radius: 10px; /* Bordes redondeados */
+    background-color: #fff; /* Fondo blanco */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+/* Botones dentro de las tarjetas de insumos */
+.insumo button {
+    padding: 8px 15px;
+    margin-top: 10px;
+    background-color: #d32f2f; /* Rojo fuerte */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer; /* Manito al pasar el cursor */
+    transition: background-color 0.3s ease; /* Efecto suave */
+}
+
+.insumo button:hover {
+    background-color: #b71c1c; /* Más oscuro al pasar el cursor */
+}
+
+/* Lista de recetas: elimina viñetas y ajusta el estilo */
+ul {
+    list-style-type: none; /* Sin viñetas */
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0; /* Espaciado entre ítems */
+}
+
+/* Estilo de los links dentro de la lista */
+ul li a {
+    text-decoration: none;
+    color: #d32f2f; /* Mismo rojo */
+    font-weight: bold;
+}
+
+ul li a:hover {
+    text-decoration: underline; /* Subrayado al pasar el cursor */
+}
+
+/* Footer o pie de página */
+footer {
+    background-color: #ffcccb; /* Fondo rosado claro */
+    padding: 15px;
+    margin-top: 30px; /* Separación respecto al contenido */
+}
+
+/* Párrafos en las páginas específicas de insumos */
+section p {
+    max-width: 600px; /* Limita el ancho para que no sea tan largo */
+    margin: 0 auto; /* Centra horizontalmente */
+    font-size: 1.1em;
+    line-height: 1.5em; /* Espaciado entre líneas */
+}
+
+/* Estilos para los elementos de formulario */
+select, input[type="number"] {
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc; /* Borde gris claro */
+    font-size: 1em;
+}
+
+/* Botones generales */
+button {
+    padding: 10px 20px;
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #b71c1c; /* Más oscuro al pasar el cursor */
+}
+
+/* Botones de autenticación (login/register) */
+.auth-buttons {
+    display: flex;
+    gap: 10px; /* Separación entre botones */
+    margin-top: 10px;
+}
+
+.auth-buttons button {
+    background-color: #ff69b4; /* Rosa fuerte */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.auth-buttons button:hover {
+    background-color: #ff1493; /* Rosa más oscuro al pasar el cursor */
+}
+
+/*estilos css de contactanos 
+/* contactanos.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff7f2;
+    color: #333;
+}
+
+header {
+    background-color: #ffb6b9;
+    padding: 20px;
+    text-align: center;
+}
+
+header img {
+    width: 80px;
+    height: 80px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+header h1 {
+    margin: 10px 0;
+    font-size: 2em;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffe0e6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #d46a6a;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #444;
+}
+
+input, textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #ff7b89;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff5e6c;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffb6b9;
+    color: white;
+    margin-top: 40px;
+}
+

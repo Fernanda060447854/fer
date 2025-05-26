@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información del Usuario</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            text-align: left;
+            margin-top: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+        input[disabled] {
+            background-color: #f0f0f0;
+            color: #888;
+        }
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #e65c50;
+        }
+        .edit-btn {
+            background-color: #fa79ef;
+            margin-top: 10px;
+        }
+        .edit-btn:hover {
+            background-color: #fe76d7;
+        }
+        .back-btn {
+            background-color: #fa79ef;
+    
+            margin-top: 10px;
+        }
+        .back-btn:hover {
+            background-color: #fe76d7;
+       
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Información del Usuario</h2>
+        <form id="userForm">
+            <label for="usuario">Nombre de usuario:</label>
+            <input type="text" id="usuario" name="usuario" disabled required>
+            <button type="button" class="edit-btn" onclick="toggleEdicion('usuario', this)">Editar</button>
+            
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" name="correo" disabled required>
+            <button type="button" class="edit-btn" onclick="toggleEdicion('correo', this)">Editar</button>
+
+            <label for="domicilio">Domicilio:</label>
+            <input type="text" id="domicilio" name="domicilio" disabled required>
+            <button type="button" class="edit-btn" onclick="toggleEdicion('domicilio', this)">Editar</button>
+
+            <label for="metodoPago">Método de Pago:</label>
+            <select id="metodoPago" name="metodoPago" required>
+                <option value="tarjeta">Tarjeta de Crédito/Débito</option>
+                <option value="paypal">PayPal</option>
+                <option value="transferencia">Transferencia Bancaria</option>
+            </select>
+
+            <button type="submit">Guardar Información</button>
+        </form>
+    </div>
+    <button class="back-btn" onclick="volverPagina()">⬅ Volver</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            cargarDatos("usuario");
+            cargarDatos("correo");
+            cargarDatos("domicilio");
+        });
+
+        function cargarDatos(campoId) {
+            if (localStorage.getItem(campoId)) {
+                document.getElementById(campoId).value = localStorage.getItem(campoId);
+            }
+        }
+
+        function toggleEdicion(campoId, boton) {
+            let campo = document.getElementById(campoId);
+            if (campo.disabled) {
+                campo.disabled = false;
+                campo.focus();
+                boton.textContent = "Guardar";
+            } else {
+                campo.disabled = true;
+                localStorage.setItem(campoId, campo.value);
+                boton.textContent = "Editar";
+                alert("✅ " + campoId.charAt(0).toUpperCase() + campoId.slice(1) + " guardado correctamente.");
+            }
+        }
+
+        document.getElementById("userForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            guardarDatos("usuario");
+            guardarDatos("correo");
+            guardarDatos("domicilio");
+            alert("✅ Información guardada con éxito");
+        });
+
+        function guardarDatos(campoId) {
+            let valor = document.getElementById(campoId).value;
+            localStorage.setItem(campoId, valor);
+            document.getElementById(campoId).disabled = true;
+        }
+
+        function volverPagina() {
+            if (document.referrer) {
+                window.history.back();
+            } else {
+                window.location.href = "index.html"; // Redirige a la página principal si no hay historial
+            }
+        }
+    </script>
+</body>
+</html>

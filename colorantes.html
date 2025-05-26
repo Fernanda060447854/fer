@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorantes Alimentarios</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Colorantes Alimentarios</h1>
+        <nav>
+            <a href="index.html"><button>Volver al inicio</button></a>
+        </nav>
+    </header>
+
+    <section class="container">
+        <p>Ideales para darle color y creatividad a tus postres y pasteles.</p>
+
+        <!-- Tipos de Colorantes -->
+        <h3>Tipos de Colorante disponibles:</h3>
+        <select id="tipo-colorante">
+            <option value="colorante-rojo">Rojo</option>
+            <option value="colorante-amarillo">Amarillo</option>
+            <option value="colorante-verde">Verde</option>
+            <option value="colorante-azul">Azul</option>
+            <option value="colorante-negro">Negro</option>
+        </select>
+
+        <!-- Cantidad -->
+        <h3>Cantidad (botellas):</h3>
+        <input type="number" id="cantidad" value="1" min="1" max="10">
+
+        <br><br>
+
+        <!-- Botón para añadir al carrito -->
+        <a href="carrito.html"><button>Añadir al carrito</button></a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Dulces Delicias - Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>
